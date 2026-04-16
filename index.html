@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>ADHD Is… | Neurodivergent Apparel & Art Prints</title>
+  <meta name="description" content="ADHD Is… — apparel and art for the mind that works differently. Not a diagnosis. Not advice. A mirror. One phrase. Infinite recognition." />
+  <meta name="keywords" content="ADHD apparel, ADHD shirt, neurodivergent clothing, ADHD art print, ADHD gift for women, ADHD is, funny ADHD tee, ADHD awareness" />
+  <link rel="canonical" href="https://adhdis.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="ADHD Is… | Neurodivergent Apparel & Art Prints" />
+  <meta property="og:description" content="Not a diagnosis. Not advice. A mirror. One phrase. Infinite recognition." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://adhdis.com/" />
+  <meta property="og:image" content="https://adhdis.com/og-image.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ADHD Is… | Neurodivergent Apparel & Art Prints" />
+  <meta name="twitter:description" content="Not a diagnosis. A mirror." />
+
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Inter:wght@400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── RESET & VARS ─────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:  #0A0A0A;
+      --white:  #FFFFFF;
+      --coral:  #FF4D00;
+      --gray:   #888888;
+      --gray2:  #2a2a2a;
+      --font-bold: 'Space Grotesk', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font-bold);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ─── TOP LINE ─────────────────────────────────────── */
+    .top-line {
+      height: 3px;
+      background: var(--coral);
+      width: 100%;
+    }
+
+    /* ─── NAV ──────────────────────────────────────────── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 54px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--black);
+      border-bottom: 1px solid #1a1a1a;
+    }
+
+    .nav-logo {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+    .nav-logo .dots { color: var(--coral); }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--gray);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 400;
+      font-family: var(--font-bold);
+      letter-spacing: 0.3px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+
+    /* ─── HERO ─────────────────────────────────────────── */
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 80px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 60%, #1a0800 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-label {
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      color: var(--coral);
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.1s forwards;
+    }
+
+    .hero-title {
+      font-size: clamp(64px, 12vw, 140px);
+      font-weight: 700;
+      line-height: 0.95;
+      letter-spacing: -3px;
+      margin-bottom: 0;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.25s forwards;
+    }
+    .hero-title .dots { color: var(--coral); }
+
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 22px);
+      font-weight: 300;
+      color: var(--gray);
+      margin-top: 28px;
+      letter-spacing: 0.2px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.45s forwards;
+    }
+
+    .hero-phrase {
+      margin-top: 48px;
+      font-size: clamp(18px, 3vw, 28px);
+      font-weight: 700;
+      color: var(--white);
+      max-width: 680px;
+      line-height: 1.35;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.65s forwards;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      margin-top: 52px;
+      flex-wrap: wrap;
+      justify-content: center;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.8s forwards;
+    }
+
+    /* ─── COLLECTION TILES ─────────────────────────────── */
+    .collections {
+      display: flex;
+      gap: 2px;
+      margin-top: 52px;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 900px;
+      width: 100%;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.8s forwards;
+    }
+
+    .collection-tile {
+      background: #111;
+      flex: 1;
+      min-width: 200px;
+      padding: 28px 32px;
+      text-decoration: none;
+      color: var(--white);
+      transition: background 0.2s, transform 0.2s;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .collection-tile::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--coral);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .collection-tile:hover { background: #1a1a1a; transform: translateY(-2px); }
+    .collection-tile:hover::before { opacity: 1; }
+
+    .tile-label {
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--coral);
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    .tile-name {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .tile-desc {
+      font-size: 13px;
+      color: var(--gray);
+      font-family: var(--font-body);
+      line-height: 1.5;
+      margin-top: 4px;
+    }
+
+    .tile-cta {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--coral);
+      margin-top: 12px;
+      letter-spacing: 0.3px;
+    }
+
+    .btn-primary {
+      background: var(--coral);
+      color: var(--white);
+      padding: 16px 36px;
+      font-family: var(--font-bold);
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+      transition: opacity 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-2px); }
+
+    .btn-secondary {
+      border: 1px solid #333;
+      color: var(--gray);
+      padding: 16px 36px;
+      font-family: var(--font-bold);
+      font-size: 15px;
+      font-weight: 400;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+    .btn-secondary:hover { border-color: var(--gray); color: var(--white); }
+
+    /* ─── DIVIDER LINE ─────────────────────────────────── */
+    .divider {
+      width: calc(100% - 108px);
+      margin: 0 54px;
+      height: 1px;
+      background: #1e1e1e;
+    }
+
+    /* ─── PHRASES SECTION ──────────────────────────────── */
+    .phrases {
+      padding: 100px 54px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: var(--coral);
+      text-transform: uppercase;
+      font-weight: 400;
+      margin-bottom: 60px;
+    }
+
+    .phrases-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .phrase-card {
+      background: #111;
+      padding: 40px 44px;
+      transition: background 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .phrase-card:hover { background: #161616; }
+    .phrase-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--coral);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .phrase-card:hover::before { opacity: 1; }
+
+    .phrase-prefix {
+      font-size: 12px;
+      color: var(--coral);
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .phrase-text {
+      font-size: clamp(16px, 1.6vw, 21px);
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--white);
+    }
+
+    /* ─── BRAND SECTION ────────────────────────────────── */
+    .brand-section {
+      padding: 100px 54px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: center;
+    }
+
+    .brand-text h2 {
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 28px;
+    }
+    .brand-text h2 .dots { color: var(--coral); }
+
+    .brand-text p {
+      font-size: 17px;
+      font-weight: 400;
+      font-family: var(--font-body);
+      color: var(--gray);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .brand-text p strong {
+      color: var(--white);
+      font-family: var(--font-bold);
+      font-weight: 700;
+    }
+
+    .brand-quote {
+      border-left: 3px solid var(--coral);
+      padding: 28px 36px;
+      background: #111;
+    }
+    .brand-quote p {
+      font-size: clamp(18px, 2vw, 24px);
+      font-weight: 700;
+      font-family: var(--font-bold);
+      color: var(--white);
+      line-height: 1.45;
+      margin: 0;
+    }
+    .brand-quote .attr {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--gray);
+      margin-top: 16px;
+      font-family: var(--font-bold);
+    }
+
+    /* ─── PRODUCTS SECTION ─────────────────────────────── */
+    .products {
+      padding: 100px 54px;
+      text-align: center;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+
+    .products h2 {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+    }
+    .products h2 .dots { color: var(--coral); }
+
+    .products > p {
+      color: var(--gray);
+      font-size: 16px;
+      font-weight: 400;
+      font-family: var(--font-body);
+      margin-bottom: 64px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      max-width: 900px;
+      margin: 0 auto 52px;
+    }
+
+    .product-item {
+      background: #111;
+      padding: 40px 32px;
+      text-align: left;
+    }
+
+    .product-icon {
+      font-size: 28px;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .product-name {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .product-desc {
+      font-size: 14px;
+      color: var(--gray);
+      font-family: var(--font-body);
+      line-height: 1.6;
+    }
+
+    /* ─── COMMUNITY SECTION ────────────────────────────── */
+    .community {
+      padding: 100px 54px;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .community h2 {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin-bottom: 24px;
+    }
+
+    .community p {
+      color: var(--gray);
+      font-size: 17px;
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.7;
+      margin-bottom: 44px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ─── FOOTER ───────────────────────────────────────── */
+    footer {
+      padding: 48px 54px 36px;
+      border-top: 1px solid #1a1a1a;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .footer-logo {
+      font-size: 20px;
+      font-weight: 700;
+    }
+    .footer-logo .dots { color: var(--coral); }
+
+    .footer-slogan {
+      font-size: 13px;
+      color: var(--gray);
+      font-weight: 300;
+      margin-top: 6px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: var(--gray);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--white); }
+
+    .footer-copy {
+      font-size: 12px;
+      color: #444;
+      font-weight: 400;
+      font-family: var(--font-body);
+      width: 100%;
+      margin-top: 24px;
+      border-top: 1px solid #1a1a1a;
+      padding-top: 20px;
+    }
+
+    /* ─── ANIMATIONS ───────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── RESPONSIVE ───────────────────────────────────── */
+    @media (max-width: 768px) {
+      nav { padding: 20px 24px; }
+      .nav-links { display: none; }
+      .hero { padding: 60px 24px; min-height: 80vh; }
+      .phrases { padding: 64px 24px; }
+      .phrases-grid { grid-template-columns: 1fr; }
+      .brand-section { padding: 64px 24px; grid-template-columns: 1fr; gap: 40px; }
+      .products { padding: 64px 24px; }
+      .collections { flex-direction: column; }
+      .collection-tile { min-width: unset; }
+      .product-grid { grid-template-columns: 1fr; }
+      .community { padding: 64px 24px; }
+      footer { padding: 40px 24px 28px; flex-direction: column; align-items: flex-start; }
+      .divider { width: calc(100% - 48px); margin: 0 24px; }
+    }
+  </style>
+
+  <!-- Pinterest Tag -->
+  <script>
+  !function(e){if(!window.pintrk){window.pintrk = function () {
+    window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
+    n=window.pintrk;n.queue=[],n.version="3.0";var
+    t=document.createElement("script");t.async=!0,t.src=e;var
+    r=document.getElementsByTagName("script")[0];
+    r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+  pintrk('load', '2613506649299');
+  pintrk('page');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none;" alt=""
+      src="https://ct.pinterest.com/v3/?event=init&tid=2613506649299&noscript=1" />
+  </noscript>
+  <!-- end Pinterest Tag -->
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Brand",
+    "name": "ADHD Is…",
+    "url": "https://adhdis.com",
+    "description": "Neurodivergent apparel and art prints. Not a diagnosis. A mirror.",
+    "sameAs": [
+      "https://www.instagram.com/adhd_is/",
+      "https://www.etsy.com/shop/ADHDis"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <div class="top-line"></div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">ADHD is<span class="dots">…</span></div>
+    <ul class="nav-links">
+      <li><a href="#phrases">Phrases</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="https://www.etsy.com/shop/ADHDis" target="_blank" rel="noopener">Shop</a></li>
+      <li><a href="https://www.instagram.com/adhd_is/" target="_blank" rel="noopener">@adhd_is</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-label">Neurodivergent Apparel &amp; Art</p>
+    <h1 class="hero-title">ADHD is<span class="dots">…</span></h1>
+    <p class="hero-sub">A mind of its own.</p>
+    <p class="hero-phrase">
+      Not a diagnosis. Not advice.<br>A mirror. One phrase. Infinite recognition.
+    </p>
+    <div class="collections">
+      <a href="https://www.etsy.com/shop/ADHDis?section_id=58065597" target="_blank" rel="noopener" class="collection-tile">
+        <span class="tile-label">Flagship</span>
+        <span class="tile-name">Illustration Tees</span>
+        <span class="tile-desc">Original art by Valeria Bozhko.<br>One image. One sentence.</span>
+        <span class="tile-cta">Shop Now →</span>
+      </a>
+      <a href="https://www.etsy.com/shop/ADHDis?section_id=58050144" target="_blank" rel="noopener" class="collection-tile">
+        <span class="tile-label">Hunter</span>
+        <span class="tile-name">The Hunter Series</span>
+        <span class="tile-desc">Being a hunter in a world<br>built for farmers.</span>
+        <span class="tile-cta">Shop Now →</span>
+      </a>
+      <a href="https://www.etsy.com/shop/ADHDis?section_id=58065593" target="_blank" rel="noopener" class="collection-tile">
+        <span class="tile-label">Him &amp; Her</span>
+        <span class="tile-name">The ADHD Couple</span>
+        <span class="tile-desc">Two sentences.<br>A complete scene.</span>
+        <span class="tile-cta">Shop Now →</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PHRASES -->
+  <section class="phrases" id="phrases">
+    <p class="section-label">Story of my life.</p>
+    <div class="phrases-grid">
+
+      <div class="phrase-card">
+        <span class="phrase-prefix">ADHD is…</span>
+        <p class="phrase-text">buying the perfect planner. Opening it once. Never again.</p>
+      </div>
+
+      <div class="phrase-card">
+        <span class="phrase-prefix">ADHD is…</span>
+        <p class="phrase-text">your brain finally ready to work at 11pm.</p>
+      </div>
+
+      <div class="phrase-card">
+        <span class="phrase-prefix">ADHD is…</span>
+        <p class="phrase-text">knowing exactly what to do and your body refusing to start.</p>
+      </div>
+
+      <div class="phrase-card">
+        <span class="phrase-prefix">ADHD is…</span>
+        <p class="phrase-text">the guilt of a Sunday wasted and the hope that Monday will be different.</p>
+      </div>
+
+      <div class="phrase-card">
+        <span class="phrase-prefix">ADHD is…</span>
+        <p class="phrase-text">starting 7 things and finishing none. And feeling guilty about all 7.</p>
+      </div>
+
+      <div class="phrase-card">
+        <span class="phrase-prefix">ADHD is…</span>
+        <p class="phrase-text">being a hunter in a world built for farmers.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ABOUT -->
+  <section class="brand-section" id="about">
+    <div class="brand-text">
+      <h2>Not a niche.<br>A mirror<span class="dots">.</span></h2>
+      <p>
+        ADHD Is… started with one phrase said out loud for the first time.<br>
+        Not a complaint. Not an excuse. <strong>Just the truth.</strong>
+      </p>
+      <p>
+        We're a couple. She has ADHD. I build the systems around it.
+        Together we created ADHD Is… because we were tired of content
+        that explained ADHD to people who already <strong>live it every day.</strong>
+      </p>
+      <p>
+        You don't need an explanation. You need a mirror.
+      </p>
+      <p style="color: var(--gray); font-size: 14px;">
+        Illustrated by Valeria Bozhko &nbsp;·&nbsp; Written from life.
+      </p>
+    </div>
+    <div class="brand-quote">
+      <p>"ADHD Is… loving deeply and forgetting to show it."</p>
+      <p class="attr">— Story of my life.</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PRODUCTS -->
+  <section class="products" id="shop">
+    <h2>Wear your brain<span class="dots">.</span></h2>
+    <p>Every piece is a moment you thought only you understood.</p>
+
+    <div class="product-grid">
+      <a href="https://www.etsy.com/shop/ADHDis?section_id=58065597" target="_blank" rel="noopener" class="product-item" style="text-decoration:none; color:inherit; display:block; cursor:pointer; transition: background 0.2s;" onmouseover="this.style.background='#1a1a1a'" onmouseout="this.style.background='#111'">
+        <span class="product-icon">🖼</span>
+        <p class="product-name">Illustration Tees</p>
+        <p class="product-desc">Original art by Valeria Bozhko.<br>One image. One sentence. You stop scrolling.</p>
+        <p style="color:var(--coral); font-size:13px; font-weight:700; margin-top:16px;">Shop Now →</p>
+      </a>
+      <a href="https://www.etsy.com/shop/ADHDis?section_id=58050144" target="_blank" rel="noopener" class="product-item" style="text-decoration:none; color:inherit; display:block; cursor:pointer; transition: background 0.2s;" onmouseover="this.style.background='#1a1a1a'" onmouseout="this.style.background='#111'">
+        <span class="product-icon">🏹</span>
+        <p class="product-name">The Hunter Series</p>
+        <p class="product-desc">Hunter in a world built for farmers.<br>Wear your nature.</p>
+        <p style="color:var(--coral); font-size:13px; font-weight:700; margin-top:16px;">Shop Now →</p>
+      </a>
+      <a href="https://www.etsy.com/shop/ADHDis?section_id=58065593" target="_blank" rel="noopener" class="product-item" style="text-decoration:none; color:inherit; display:block; cursor:pointer; transition: background 0.2s;" onmouseover="this.style.background='#1a1a1a'" onmouseout="this.style.background='#111'">
+        <span class="product-icon">👫</span>
+        <p class="product-name">The ADHD Couple</p>
+        <p class="product-desc">Him. Her. Two sentences.<br>A complete scene.</p>
+        <p style="color:var(--coral); font-size:13px; font-weight:700; margin-top:16px;">Shop Now →</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section class="community">
+    <h2>Same boat<span class="dots">.</span></h2>
+    <p>
+      Every Monday and Thursday — a new phrase, a new moment,
+      a new "that's exactly it." Follow along on Instagram and
+      send one to someone who gets it.
+    </p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/adhd_is/" target="_blank" rel="noopener" class="btn-primary">@adhd_is on Instagram</a>
+      <a href="https://www.etsy.com/shop/ADHDis" target="_blank" rel="noopener" class="btn-secondary">Etsy Shop</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <div class="footer-logo">ADHD is<span class="dots">…</span></div>
+      <div class="footer-slogan">A mind of its own.</div>
+    </div>
+    <ul class="footer-links">
+      <li><a href="https://www.etsy.com/shop/ADHDis" target="_blank" rel="noopener">Etsy Shop</a></li>
+      <li><a href="https://www.instagram.com/adhd_is/" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.etsy.com/shop/ADHDis#policies" target="_blank" rel="noopener">Policies</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 ADHD Is… · www.adhdis.com · Part of the ADHDWave™ ecosystem · Not a niche. A mirror.</p>
+  </footer>
+
+</body>
+</html>
